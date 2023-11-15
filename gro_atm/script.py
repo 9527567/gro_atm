@@ -1,10 +1,9 @@
+#! python
 import argparse
 import json
 
-import parmed
-
-from workhouse.common import to_openmm
-from workhouse.config import Config
+from .common import to_openmm
+from .config import Config
 
 parser = argparse.ArgumentParser()
 parser.add_argument('-p', '--top', required=True, help='gromacs top file')
@@ -37,6 +36,6 @@ if __name__ == '__main__':
     basename = config.BASENAME + '_atm'
     to_openmm(args.p, args.g, basename + '_sys.xml', basename + '.pdb')
 
-    config.write_config()
+    config.write_config('asyncre.cntl')
 
     # config = json.load(open(sys.argv[1], 'r'))

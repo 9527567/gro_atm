@@ -1,5 +1,5 @@
 import json
-from FlatBottomRestraint import find_plat_bottom
+from .FlatBottomRestraint import find_plat_bottom
 
 class Config():
     def __init__(self, args, template=None) -> None:
